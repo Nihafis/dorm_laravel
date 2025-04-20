@@ -20,11 +20,11 @@
 }
 
 .content {
-    @apply ml-80 mt-3 p-4 bg-gray-400 rounded-xl mr-5 mb-10;
+    @apply ml-80 mt-3 p-4 bg-gray-300 rounded-xl mr-5 mb-10;
 }
 
 .sidebar {
-    @apply fixed h-4/5 mb-10 w-54 bg-gradient-to-br from-orange-600 to-orange-300 text-white ml-5 p-0;
+    @apply fixed h-4/5 mb-10 w-64 bg-gradient-to-br from-orange-600 to-orange-300 text-white ml-5 p-0;
 }
 
 .sidebar-header {
@@ -32,7 +32,7 @@
 }
 
 .navbar {
-    @apply p-5 text-orange-400 border-b-2 border-orange-400 -m5;
+    @apply p-5 text-orange-400 border-b-2 border-orange-400 m-5;
 }
 
 .sidebar-body {
@@ -43,6 +43,6 @@
     @apply mb-4;
 }
 
-.meny li {
-    @apply p-5 pl-5 roudned-md text-gray-800 hover:bg-orange-500 hover:text-gray-600;
+.menu li {
+    @apply p-3 pl-5 rounded-md  hover:bg-orange-300 hover:text-gray-800;
 }
