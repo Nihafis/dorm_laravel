@@ -45,7 +45,7 @@ class Signin extends Component
         }
     }
     public function render()
-    {
-        return view('livewire.signin');
+    { 
+        return view('livewire.signin'); 
     }
 }
