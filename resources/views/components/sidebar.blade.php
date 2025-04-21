@@ -1,20 +1,4 @@
-<div class="navbar">
-    <div class="flex items-center justify-between">
-        <div>
-            <i class="fa-solid fa-user me-2"></i>
-            <span class="username">Admin system (Admin) </span>
-        </div>
-        <div>
-            <button class="border border-orange-400 text-orange-400 px-6 py-3 rounded-2xl">
-                <span>ออกจากระบบ</span>
-                <i class="fa-solid fa-sign-out-alt"></i>
-            </button>
-        </div>
-    </div>
-
-
-</div>
-
+@livewire('navbar')
 <div class="sidebar">
     <div class="sidebar-header">
         <div class="text-center">ABC Apartmente</div>
@@ -22,12 +6,22 @@
     <div class="sidebar-body">
         <div class="menu">
             <ul>
-                <li> <i class="fa-solid fa-house me-2"></i>Dashboard</li>
-                <li> <i class="fa-solid fa-user me-2"></i>Profile</li>
-                <li> <i class="fa-solid fa-gear me-2"></i>Setting</li>
+                <li>
+                    <a href="/dashboard" wire:navigate>
+                        <i class="fa-solid fa-chart-line me-2"></i>Dashboard
+                    </a>
+                </li>
+                </a>
+                <li> <i class="fa-solid fa-building me-2"></i>บันทึกค่าใช้จ่าย</li>
+                <li> <i class="fa-solid fa-home me-2"></i>ห้องพัก</li>
+                <li> <i class="fa-solid fa-user me-2"></i>ผู้เช่า</li>
+                <li> <i class="fa-solid fa-gear me-2"></i>ผู้ใช้งาน</li>
+                <li>
+                    <a href="/company/index" wire:navigate>
+                        <i class="fa-solid fa-building me-2"></i>ข้อมูลสถานประกอบการ
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
-
-
 </div>

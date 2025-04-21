@@ -11,8 +11,43 @@
         "Noto Color Emoji";
 }
 
+/* button , a {
+    @apply !hover:cursor-pointer;
+} */
+
 .btn {
-    @apply w-full p-2 bg-orange-500 text-white rounded-md;
+    @apply w-full p-2 bg-orange-500 text-white rounded-md hover:cursor-pointer;
+}
+
+.btn-primary {
+    @apply bg-orange-500 text-white rounded-md px-4 py-2 rounded-2xl hover:cursor-pointer;
+
+
+}
+
+.btn-danger {
+    @apply bg-red-500 text-white rounded-md px-4 py-2 rounded-2xl hover:cursor-pointer;
+
+}
+
+.btn-secondary {
+    @apply bg-gray-500 text-white rounded-md px-4 py-2 rounded-2xl hover:cursor-pointer;
+
+}
+
+.btn-warning {
+    @apply bg-yellow-500 text-white rounded-md px-4 py-2 rounded-2xl hover:cursor-pointer;
+
+}
+
+.btn-success {
+    @apply bg-green-500 text-white rounded-md px-4 py-2 rounded-2xl hover:cursor-pointer;
+
+}
+
+.btn-info {
+    @apply bg-blue-500 text-white rounded-md px-4 py-2 rounded-2xl hover:cursor-pointer;
+
 }
 
 .form-control {
@@ -21,6 +56,18 @@
 
 .content {
     @apply ml-80 mt-3 p-4 bg-gray-300 rounded-xl mr-5 mb-10;
+}
+
+.content-header {
+    @apply mb-3 text-xl border-b border-gray-600 pb-3;
+}
+
+.alert {
+    @apply p-3 rounded-md shadow-lg pl-5;
+}
+
+.alert-success {
+    @apply bg-green-500 text-white;
 }
 
 .sidebar {
@@ -44,5 +91,5 @@
 }
 
 .menu li {
-    @apply p-3 pl-5 rounded-md  hover:bg-orange-300 hover:text-gray-800;
+    @apply p-3 pl-5 rounded-md hover:bg-orange-300 hover:text-gray-800;
 }
