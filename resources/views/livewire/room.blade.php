@@ -53,11 +53,11 @@
         <div class="flex gap-5 mt-3">
             <div class="w-1/2">
                 <label for="">จากหมายเลข</label>
-                <input type="number" class="form-control" wire:model="from_number">
+                <input type="text" class="form-control" wire:model="from_number">
             </div>
             <div class="w-1/2">
                 <label for="">ถึงหมายเลข</label>
-                <input type="number" class="form-control" wire:model="to_number">
+                <input type="text" class="form-control" wire:model="to_number">
             </div>
         </div>
     </x-modal>
