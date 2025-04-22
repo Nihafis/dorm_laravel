@@ -35,7 +35,7 @@ class Company extends Component
     {
         $logo = '';
         if ($this->logo) {
-            $logo = $this->logo->store('orgamiztions', 'public');
+            $logo = $this->logo->store('organizations', 'public');
         }
 
         if (OrganizationModel::count() == 0) {
@@ -52,11 +52,13 @@ class Company extends Component
                 }
             }
         }
+
         $organization->name = $this->name;
         $organization->address = $this->address;
         $organization->phone = $this->phone;
         $organization->tax_code = $this->tax_code;
         $organization->logo = $logo;
+        // dd($organization);
         $organization->save();
 
         $this->flashMessage = 'บันทึกข้อมูลเรียบร้อยแล้ว';
