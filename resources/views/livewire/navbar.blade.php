@@ -9,6 +9,11 @@
                 <span>ออกจากระบบ</span>
                 <i class="fa-solid fa-sign-out-alt ms-2"></i>
             </button>
+            <button wire:click="editProfile"
+                class="border border-orange-400 text-orange-400 px-6 py-3 rounded-2xl">
+                <span>แก้ไขข้อมูล</span>
+                <i class="fa-solid fa-user-edit ms-2"></i>
+            </button>
         </div>
     </div>
     <x-modal wire:model="showModal" maxWidth="sm" title="ออกจากระบบ">
@@ -27,5 +32,47 @@
                 <span>ยกเลิก</span>
             </button>
         </div>
+    </x-modal>
+    <x-modal wire:model="showModalEdit" maxWidth="sm" title="แก้ไขข้อมูลส่วนตัว">
+        @if ($errors->any())
+            <div class="alert-danger">
+                @foreach ($errors->all() as $error)
+                    <div>{{ $error }}</div>
+                @endforeach
+            </div>
+        @endif
+        <div class="">
+            <form wire:submit="updateProfile">
+                <div class="form-group">
+                    <label for="username">ชื่อผู้ใช้</label>
+                    <input type="text" class="form-control" wire:model="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">รหัสผ่านใหม่</label>
+                    <input type="password" class="form-control" wire:model="password">
+                </div>
+                <div class="form-group">
+                    <label for="password_confirm">ยืนยันรหัสผ่านใหม่</label>
+                    <input type="password" class="form-control" wire:model="password_confirm">
+                </div>
+                <div class="flex justify-center gap-2 mt-6 pb-4">
+                    <button class="btn-primary" type="submit"> 
+                        <i class="fa-solid fa-check mr-1"></i>
+                        <span>ยืนยัน</span>
+                    </button>
+                    <button class="btn-secondary" wire:click="showModalEdit = false">
+                        <i class="fa-solid fa-xmark mr-1"></i>
+                        <span>ยกเลิก</span>
+                    </button>
+                </div>
+            </form>
+
+        </div>
+        @if ($saveSuccess)
+            <div class="alert-success">
+                <i class="fa-solid fa-check"></i>
+                <span>บันทึกข้อมูลสำเร็จ</span>
+            </div>
+        @endif
     </x-modal>
 </div>

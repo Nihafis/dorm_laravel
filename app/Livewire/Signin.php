@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class Signin extends Component
 {
@@ -33,20 +34,20 @@ class Signin extends Component
             $this->errorUsername = $validator->errors()->get('username')[0] ?? null;
             $this->errorPassword = $validator->errors()->get('password')[0] ?? null;
         } else {
-            $user = User::where('name', $this->username)
-                ->where('password', $this->password)
-                ->first();
-            if (!$user) {             
-                $this->error = 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง';
-            } else {
+            $user = User::where('name', $this->username)->first();
+            if ($user && Hash::check($this->password, $user->password)) {
                 session()->put('user_id', $user->id);
                 session()->put('user_name', $user->name);
                 $this->redirect('/dashboard');
+            } else {
+                $this->error = 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง';
             }
         }
     }
+
+
     public function render()
-    { 
-        return view('livewire.signin'); 
+    {
+        return view('livewire.signin');
     }
 }

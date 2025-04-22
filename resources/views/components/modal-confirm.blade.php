@@ -12,14 +12,14 @@
             {{ $text }}
         </div>
     </div>
-    <div class="mt-5 text-center pb-5">
+    <div class="mt-5 flex text-center pb-5">
         <button class="btn btn-success mr-2" wire:click={{ $clickConfirm }}>
             <i class="fa fa-check"></i>
-            {{ $clickConfirm }}
+            ยืนยัน
         </button>
         <button class="btn btn-danger" wire:click={{ $clickCancel }}>
             <i class="fa fa-times"></i>
-            {{ $clickCancel }}
+            ยกเลิก
         </button>
     </div>
 </x-modal>

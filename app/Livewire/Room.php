@@ -15,10 +15,11 @@ class Room extends Component
     public $name;
     public $price_day;
     public $price_month;
-    public $form_number;
+    public $from_number;
     public $to_number;
     public $price_per_day;
     public $price_per_month;
+    public $nameForDelete;
 
     public function mount()
     {
@@ -46,6 +47,8 @@ class Room extends Component
     {
         $this->showModalDelete = true;
         $this->id = $id;
+        $room = RoomModel::find($id);
+        $this->nameForDelete = $room->name;
     }
 
     public function updateRoom()
@@ -55,12 +58,17 @@ class Room extends Component
         $room->price_per_day = $this->price_day;
         $room->price_per_month = $this->price_month;
         $room->save();
+
+        $this->showModalEdit = false;
+        $this->fetchData();
     }
     public function deleteRoom()
     {
         $room = RoomModel::find($this->id);
         $room->status = 'deleted';
         $room->save();
+        $this->showModalDelete = false;
+        $this->fetchData();
     }
 
 
@@ -83,8 +91,8 @@ class Room extends Component
             return;
         }
 
-        if ($this->to_number < 1000) {
-            $this->addError('to_number', 'ห้องต้องมีค่ามากกว่า 1000');
+        if ($this->to_number > 1000) {
+            $this->addError('to_number', 'ห้องต้องมีน้อยมากกว่า 1000');
             return;
         }
 
@@ -96,6 +104,11 @@ class Room extends Component
             $room->status = 'use';
             $room->save();
         }
+
+        $this->from_number = '';
+        $this->to_number = '';
+        $this->price_per_day = '';
+        $this->price_per_month = '';
         $this->showModal = false;
         $this->fetchData();
     }

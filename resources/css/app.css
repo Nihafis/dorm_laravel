@@ -11,9 +11,11 @@
         "Noto Color Emoji";
 }
 
-/* button , a {
-    @apply !hover:cursor-pointer;
-} */
+button,
+a {
+    @apply hover:cursor-pointer;
+}
+
 li {
     @apply hover:cursor-pointer;
 }
@@ -23,34 +25,34 @@ li {
 }
 
 .btn-primary {
-    @apply bg-orange-500 text-white rounded-md px-4 py-2 rounded-2xl hover:cursor-pointer;
+    @apply bg-orange-500 text-white  px-4 py-2 rounded-2xl hover:cursor-pointer;
 
 
 }
 
 .btn-danger {
-    @apply bg-red-500 text-white rounded-md px-4 py-2 rounded-2xl hover:cursor-pointer;
+    @apply bg-red-500 text-white  px-4 py-2 rounded-2xl hover:cursor-pointer;
 
 }
 
 .btn-secondary {
-    @apply bg-gray-500 text-white rounded-md px-4 py-2 rounded-2xl hover:cursor-pointer;
+    @apply bg-gray-500 text-white  px-4 py-2 rounded-2xl hover:cursor-pointer;
 
 }
 
 
 .btn-warning {
-    @apply bg-yellow-500 text-white rounded-md px-4 py-2 rounded-2xl hover:cursor-pointer;
+    @apply bg-yellow-500 text-white  px-4 py-2 rounded-2xl hover:cursor-pointer;
 
 }
 
 .btn-success {
-    @apply bg-green-500 text-white rounded-md px-4 py-2 rounded-2xl hover:cursor-pointer;
+    @apply bg-green-500 text-white  px-4 py-2 rounded-2xl hover:cursor-pointer;
 
 }
 
 .btn-info {
-    @apply bg-blue-500 text-white rounded-md px-4 py-2 rounded-2xl hover:cursor-pointer;
+    @apply bg-blue-500 text-white  px-4 py-2 rounded-2xl hover:cursor-pointer;
 
 }
 
@@ -70,16 +72,20 @@ li {
     @apply p-3 rounded-md shadow-lg pl-5;
 }
 
+.alert-danger {
+    @apply bg-red-500 text-white p-3 rounded-md shadow-lg pl-5 mb-3;
+}
+
 .alert-success {
-    @apply bg-green-500 text-white;
+    @apply bg-green-500 text-white p-3 rounded-md shadow-lg pl-5 mb-3;
 }
 
 .sidebar {
-    @apply  h-4/5 mb-10 w-72 bg-gradient-to-br from-orange-600 to-orange-400 text-white ml-5 p-0 rounded-xl;
+    @apply h-4/5 mb-10 w-72 bg-gradient-to-br from-orange-600 to-orange-400 text-white ml-5 p-0 rounded-xl;
 }
 
 .sidebar-header {
-    @apply bg-gradient-to-r from-orange-600 to-orange-400 text-white text-xl p-4 rounded-t-xl  border-b border-gray-300;
+    @apply bg-gradient-to-r from-orange-600 to-orange-400 text-white text-xl p-4 rounded-t-xl border-b border-gray-300;
 }
 
 .navbar {
@@ -106,8 +112,8 @@ li {
     @apply bg-blue-500 py-2 px-2 text-white pl-4 rounded-md text-xl;
 }
 
-.btn-delte {
-    @apply bg-red-50 py-2 px-2 text-white pl-4 rounded-md text-xl;
+.btn-delete {
+    @apply bg-red-500 py-2 px-2 text-white pl-4 rounded-md text-xl;
 }
 
 table {
@@ -137,4 +143,12 @@ table {
 
 .table tr:last-child td:last-child {
     @apply rounded-br-md;
+}
+
+.table tbody tr {
+    @apply border-b border-gray-300;
+}
+
+.table tbody tr:last-child {
+    @apply border-b-0;
 }
