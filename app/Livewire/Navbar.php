@@ -53,7 +53,7 @@ class Navbar extends Component
         // $this->showModalEdit = false;
         $this->saveSuccess = true;
 
-        $this->clearError();
+        // $this->clearError();
     }
     public function mount()
     {

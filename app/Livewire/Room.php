@@ -102,6 +102,7 @@ class Room extends Component
             $room->price_per_day = $this->price_per_day;
             $room->price_per_month = $this->price_per_month;
             $room->status = 'use';
+            $room->is_empty = 'yes';
             $room->save();
         }
 

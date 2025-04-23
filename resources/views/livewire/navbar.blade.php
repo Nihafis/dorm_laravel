@@ -5,14 +5,13 @@
             <span class="username">{{ $user_name }} </span>
         </div>
         <div>
+            <button wire:click="editProfile" class="border border-orange-400 text-orange-400 px-6 py-3 rounded-2xl">
+                <span>แก้ไขข้อมูล</span>
+                <i class="fa-solid fa-user-edit ms-2"></i>
+            </button>
             <button wire:click="showModal = true" class="border border-orange-400 text-orange-400 px-6 py-3 rounded-2xl">
                 <span>ออกจากระบบ</span>
                 <i class="fa-solid fa-sign-out-alt ms-2"></i>
-            </button>
-            <button wire:click="editProfile"
-                class="border border-orange-400 text-orange-400 px-6 py-3 rounded-2xl">
-                <span>แก้ไขข้อมูล</span>
-                <i class="fa-solid fa-user-edit ms-2"></i>
             </button>
         </div>
     </div>
@@ -56,7 +55,7 @@
                     <input type="password" class="form-control" wire:model="password_confirm">
                 </div>
                 <div class="flex justify-center gap-2 mt-6 pb-4">
-                    <button class="btn-primary" type="submit"> 
+                    <button class="btn-primary" type="submit">
                         <i class="fa-solid fa-check mr-1"></i>
                         <span>ยืนยัน</span>
                     </button>
