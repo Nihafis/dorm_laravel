@@ -11,7 +11,7 @@
 
                 </li>
 
-                <li wire:click="changeMenu('expense/index')" @if ($currentMenu == 'expense/index') class="active" @endif>
+                <li wire:click="changeMenu('pay')" @if ($currentMenu == 'pay') class="active" @endif>
                     <i class="fa-solid fa-building me-2"></i>บันทึกค่าใช้จ่าย
                 </li>
                 <li wire:click="changeMenu('room')" @if ($currentMenu == 'room/index') class="active" @endif>

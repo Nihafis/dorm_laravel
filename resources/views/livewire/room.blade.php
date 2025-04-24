@@ -106,7 +106,7 @@
         </div>
     </x-modal>
 
-    <x-modal-confirm wire:model="showModalDelete" title="ลบห้องพัก"
+    <x-modal-confirm showModalDelete="showModalDelete" title="ลบห้องพัก"
         text="คุณแน่ใจที่จะลบห้องพัก {{ $nameForDelete }} หรือไม่" clickConfirm="deleteRoom({{ $id }})"
         clickCancel="showModalDelete = false" />
 

@@ -8,24 +8,24 @@
         <table class="table mt-3">
             <thead>
                 <tr>
-                    <th>ชื่อ</th>
-                    <th>เบอร์โทร</th>
-                    <th>วันที่เข้าพัก</th>
-                    <th>วันที่ออกพัก</th>
-                    <th>ประเถทการพัก</th>
-                    <th>หมายเหตุ</th>
+                    <th class="text-center">ชื่อ</th>
+                    <th class="text-center">เบอร์โทร</th>
+                    <th class="text-center">วันที่เข้าพัก</th>
+                    <th class="text-center">วันที่ออกพัก</th>
+                    <th class="text-center">ประเถทการพัก</th>
+                    <th class="text-center">หมายเหตุ</th>
                     <th withd="230px"></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($customers as $customer)
                     <tr>
-                        <td>{{ $customer->name }}</td>
-                        <td>{{ $customer->phone }}</td>
-                        <td>{{ $customer->room->name }}</td>
-                        <td>{{ date('d/m/Y', strtotime($customer->created_at)) }}</td>
-                        <td>{{ $customer->stay_type == 'm' ? 'เดือน' : 'วัน' }}</td>
-                        <td>{{ $customer->remark }}</td>
+                        <td class="text-center">{{ $customer->name }}</td>
+                        <td class="text-center">{{ $customer->phone }}</td>
+                        <td class="text-center">{{ $customer->room->name }}</td>
+                        <td class="text-center">{{ date('d/m/Y', strtotime($customer->created_at)) }}</td>
+                        <td class="text-center">{{ $customer->stay_type == 'm' ? 'เดือน' : 'วัน' }}</td>
+                        <td class="text-center">{{ $customer->remark }}</td>
                         <td>
                             <button class="btn-info" wire:click="openModalMove({{ $customer->id }})">
                                 <i class="fa fa-exchange"></i>
@@ -91,7 +91,7 @@
         </div>
     </x-modal>
 
-    <x-modal-confirm wire:model="showModalDelete" title="ยกเลิกผู้เข้าพัก" wire:click="delete"
+    <x-modal-confirm showModalDelete="showModalDelete" title="ยกเลิกผู้เข้าพัก" wire:click="delete"
         clickCancel="closeModalDelete" clickConfirm="delete" text="คุณต้องการยกเลิกผู้เข้าพักหรือไม่">
         <div class="text-center">
             <i class="fa fa-trash mr-2"></i>
